@@ -1,6 +1,6 @@
 {
   "name": "mdn-browser-compat-lite",
-  "version": "0.1.0",
+  "version": "0.1.85",
   "internal-version": "0.1.0",
   "description": "A smaller version of mdn-browser-compat-data, with only the essentials!",
   "author": "Jonathan Neal <jonathantneal@hotmail.com>",
