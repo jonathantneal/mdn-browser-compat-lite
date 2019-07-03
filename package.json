@@ -1,0 +1,61 @@
+{
+  "name": "mdn-browser-compat-lite",
+  "version": "0.1.0",
+  "internal-version": "0.1.0",
+  "description": "A smaller version of mdn-browser-compat-data, with only the essentials!",
+  "author": "Jonathan Neal <jonathantneal@hotmail.com>",
+  "license": "CC0-1.0",
+  "repository": "csstools/mdn-browser-compat-lite",
+  "homepage": "https://github.com/csstools/mdn-browser-compat-lite#readme",
+  "bugs": "https://github.com/csstools/mdn-browser-compat-lite/issues",
+  "main": "index.js",
+  "files": [
+    "index.js",
+    "index.json"
+  ],
+  "scripts": {
+    "build": "node src/build.js",
+    "postbuild": "gzip-size index.json",
+    "prepublishOnly": "npm test",
+    "test": "npm run test:js",
+    "test:js": "eslint src/{*,**/*}.js --cache --ignore-path .gitignore --quiet",
+    "watch": "npm run build && npm run watch:exec",
+    "watch:exec": "nodemon --exec \"npm run build\" --watch src"
+  },
+  "engines": {
+    "node": ">=8.0.0"
+  },
+  "dependencies": {},
+  "devDependencies": {
+    "@babel/core": "^7.4.5",
+    "babel-eslint": "^10.0.2",
+    "eslint": "^6.0.1",
+    "gzip-size-cli": "^3.0.0",
+    "nodemon": "^1.19.1",
+    "pre-commit": "^1.2.2"
+  },
+  "eslintConfig": {
+    "env": {
+      "browser": true,
+      "es6": true,
+      "node": true
+    },
+    "extends": "eslint:recommended",
+    "parser": "babel-eslint",
+    "parserOptions": {
+      "ecmaVersion": 2018,
+      "impliedStrict": true,
+      "sourceType": "module"
+    },
+    "root": true
+  },
+  "keywords": [
+    "browser",
+    "compatibility",
+    "data",
+    "feature",
+    "mdn",
+    "support",
+    "version"
+  ]
+}
